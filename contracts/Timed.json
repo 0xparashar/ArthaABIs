@@ -1,0 +1,4118 @@
+{
+  "contractName": "Timed",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_duration",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_duration",
+          "type": "uint256"
+        }
+      ],
+      "name": "DurationUpdate",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_startTime",
+          "type": "uint256"
+        }
+      ],
+      "name": "TimerReset",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "duration",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "startTime",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "isTimeEnded",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "remainingTime",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "timeSinceStart",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "isTimeStarted",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_duration\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_duration\",\"type\":\"uint256\"}],\"name\":\"DurationUpdate\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_startTime\",\"type\":\"uint256\"}],\"name\":\"TimerReset\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"duration\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"isTimeEnded\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"isTimeStarted\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"remainingTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"startTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"timeSinceStart\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"timeSinceStart()\":{\"details\":\"will be less than or equal to duration\",\"returns\":{\"_0\":\"timestamp\"}}}},\"userdoc\":{\"methods\":{\"isTimeEnded()\":{\"notice\":\"return true if time period has ended\"},\"remainingTime()\":{\"notice\":\"number of seconds remaining until time is up\"},\"timeSinceStart()\":{\"notice\":\"number of seconds since contract was initialized\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/parashar/Documents/defi/arthafinance/contracts/utils/Timed.sol\":\"Timed\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/parashar/Documents/defi/arthafinance/contracts/utils/Timed.sol\":{\"keccak256\":\"0x77c6720d037d211d27908ef5923b8165defd71210a62778142be6adb7609d845\",\"urls\":[\"bzz-raw://8cb23e17dc45e41734e3773c8ee5b469dd9539a364a3589ec7ab217b138354fc\",\"dweb:/ipfs/QmWVnA6ktzvBTGCpsXaXisdgmYas5RXL4SA5sCPLFU4smP\"]},\"@openzeppelin/contracts/utils/SafeCast.sol\":{\"keccak256\":\"0x7b2b8baa20fd60ab4a328c8e34c64a353651b80ba4b5b157cbb61813f6f85d55\",\"urls\":[\"bzz-raw://125b7f9efa390e663d630c62b97ae4e0707f31623bea989ef94c97ca9d777dd2\",\"dweb:/ipfs/QmaaLSuwvqK7wqcgyS3utHgfmB7RntcvP7eJSuvQod8Z9P\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.6.0;\npragma experimental ABIEncoderV2;\n\nimport \"@openzeppelin/contracts/utils/SafeCast.sol\";\n\n// forked from Fei\nabstract contract Timed {\n    using SafeCast for uint256;\n\n    /// @notice the start timestamp of the timed period\n    uint256 public startTime;\n\n    /// @notice the duration of the timed period\n    uint256 public duration;\n\n    event DurationUpdate(uint256 _duration);\n\n    event TimerReset(uint256 _startTime);\n\n    constructor(uint256 _duration) public {\n        _setDuration(_duration);\n    }\n\n    modifier duringTime() {\n        require(isTimeStarted(), \"Timed: time not started\");\n        require(!isTimeEnded(), \"Timed: time ended\");\n        _;\n    }\n\n    modifier afterTime() {\n        require(isTimeEnded(), \"Timed: time not ended\");\n        _;\n    }\n\n    /// @notice return true if time period has ended\n    function isTimeEnded() public view returns (bool) {\n        return remainingTime() == 0;\n    }\n\n    /// @notice number of seconds remaining until time is up\n    /// @return remaining\n    function remainingTime() public view returns (uint256) {\n        return duration - timeSinceStart(); // duration always >= timeSinceStart which is on [0,d]\n    }\n\n    /// @notice number of seconds since contract was initialized\n    /// @return timestamp\n    /// @dev will be less than or equal to duration\n    function timeSinceStart() public view returns (uint256) {\n        if (!isTimeStarted()) {\n            return 0; // uninitialized\n        }\n        uint256 _duration = duration;\n        // solhint-disable-next-line not-rely-on-time\n        uint256 timePassed = block.timestamp - startTime; // block timestamp always >= startTime\n        return timePassed > _duration ? _duration : timePassed;\n    }\n\n    function isTimeStarted() public view returns (bool) {\n        return startTime != 0;\n    }\n\n    function _initTimed() internal {\n        // solhint-disable-next-line not-rely-on-time\n        startTime = block.timestamp;\n        \n        // solhint-disable-next-line not-rely-on-time\n        emit TimerReset(block.timestamp);\n    }\n\n    function _setDuration(uint _duration) internal {\n        duration = _duration;\n        emit DurationUpdate(_duration);\n    }\n}\n",
+  "sourcePath": "/Users/parashar/Documents/defi/arthafinance/contracts/utils/Timed.sol",
+  "ast": {
+    "absolutePath": "/Users/parashar/Documents/defi/arthafinance/contracts/utils/Timed.sol",
+    "exportedSymbols": {
+      "Timed": [
+        7433
+      ]
+    },
+    "id": 7434,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7284,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:29"
+      },
+      {
+        "id": 7285,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "24:33:29"
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts/utils/SafeCast.sol",
+        "file": "@openzeppelin/contracts/utils/SafeCast.sol",
+        "id": 7286,
+        "nodeType": "ImportDirective",
+        "scope": 7434,
+        "sourceUnit": 10887,
+        "src": "59:52:29",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 7433,
+        "linearizedBaseContracts": [
+          7433
+        ],
+        "name": "Timed",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 7289,
+            "libraryName": {
+              "contractScope": null,
+              "id": 7287,
+              "name": "SafeCast",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 10886,
+              "src": "168:8:29",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SafeCast_$10886",
+                "typeString": "library SafeCast"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "162:27:29",
+            "typeName": {
+              "id": 7288,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "181:7:29",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          },
+          {
+            "constant": false,
+            "functionSelector": "78e97925",
+            "id": 7291,
+            "mutability": "mutable",
+            "name": "startTime",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 7433,
+            "src": "251:24:29",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 7290,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "251:7:29",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "functionSelector": "0fb5a6b4",
+            "id": 7293,
+            "mutability": "mutable",
+            "name": "duration",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 7433,
+            "src": "331:23:29",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 7292,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "331:7:29",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 7297,
+            "name": "DurationUpdate",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 7296,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7295,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_duration",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 7297,
+                  "src": "382:17:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7294,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "382:7:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "381:19:29"
+            },
+            "src": "361:40:29"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 7301,
+            "name": "TimerReset",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 7300,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7299,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_startTime",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 7301,
+                  "src": "424:18:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7298,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "424:7:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "423:20:29"
+            },
+            "src": "407:37:29"
+          },
+          {
+            "body": {
+              "id": 7310,
+              "nodeType": "Block",
+              "src": "488:40:29",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 7307,
+                        "name": "_duration",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7303,
+                        "src": "511:9:29",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 7306,
+                      "name": "_setDuration",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7432,
+                      "src": "498:12:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 7308,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "498:23:29",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 7309,
+                  "nodeType": "ExpressionStatement",
+                  "src": "498:23:29"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 7311,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 7304,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7303,
+                  "mutability": "mutable",
+                  "name": "_duration",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 7311,
+                  "src": "462:17:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7302,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "462:7:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "461:19:29"
+            },
+            "returnParameters": {
+              "id": 7305,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "488:0:29"
+            },
+            "scope": 7433,
+            "src": "450:78:29",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 7327,
+              "nodeType": "Block",
+              "src": "556:133:29",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "id": 7314,
+                          "name": "isTimeStarted",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 7404,
+                          "src": "574:13:29",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$__$returns$_t_bool_$",
+                            "typeString": "function () view returns (bool)"
+                          }
+                        },
+                        "id": 7315,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "574:15:29",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "54696d65643a2074696d65206e6f742073746172746564",
+                        "id": 7316,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "591:25:29",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_190e07a064d1d6457df22fd58895b6cc1a4a3092bba467fa8a103ed94719098f",
+                          "typeString": "literal_string \"Timed: time not started\""
+                        },
+                        "value": "Timed: time not started"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_190e07a064d1d6457df22fd58895b6cc1a4a3092bba467fa8a103ed94719098f",
+                          "typeString": "literal_string \"Timed: time not started\""
+                        }
+                      ],
+                      "id": 7313,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "566:7:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 7317,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "566:51:29",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 7318,
+                  "nodeType": "ExpressionStatement",
+                  "src": "566:51:29"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 7322,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "UnaryOperation",
+                        "operator": "!",
+                        "prefix": true,
+                        "src": "635:14:29",
+                        "subExpression": {
+                          "argumentTypes": null,
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "id": 7320,
+                            "name": "isTimeEnded",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 7350,
+                            "src": "636:11:29",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_view$__$returns$_t_bool_$",
+                              "typeString": "function () view returns (bool)"
+                            }
+                          },
+                          "id": 7321,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "636:13:29",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "54696d65643a2074696d6520656e646564",
+                        "id": 7323,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "651:19:29",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_772fbf8040c7944616e0580f0bb6faefdfc9ccd0a36c2302843787e947033ad1",
+                          "typeString": "literal_string \"Timed: time ended\""
+                        },
+                        "value": "Timed: time ended"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_772fbf8040c7944616e0580f0bb6faefdfc9ccd0a36c2302843787e947033ad1",
+                          "typeString": "literal_string \"Timed: time ended\""
+                        }
+                      ],
+                      "id": 7319,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "627:7:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 7324,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "627:44:29",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 7325,
+                  "nodeType": "ExpressionStatement",
+                  "src": "627:44:29"
+                },
+                {
+                  "id": 7326,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "681:1:29"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 7328,
+            "name": "duringTime",
+            "nodeType": "ModifierDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 7312,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "553:2:29"
+            },
+            "src": "534:155:29",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 7337,
+              "nodeType": "Block",
+              "src": "716:75:29",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "id": 7331,
+                          "name": "isTimeEnded",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 7350,
+                          "src": "734:11:29",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$__$returns$_t_bool_$",
+                            "typeString": "function () view returns (bool)"
+                          }
+                        },
+                        "id": 7332,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "734:13:29",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "54696d65643a2074696d65206e6f7420656e646564",
+                        "id": 7333,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "749:23:29",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_0eee5efcf6cb6f3cd0b2587835314f5d0ca1c2f3b6c8791be31261527e4a4516",
+                          "typeString": "literal_string \"Timed: time not ended\""
+                        },
+                        "value": "Timed: time not ended"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_0eee5efcf6cb6f3cd0b2587835314f5d0ca1c2f3b6c8791be31261527e4a4516",
+                          "typeString": "literal_string \"Timed: time not ended\""
+                        }
+                      ],
+                      "id": 7330,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "726:7:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 7334,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "726:47:29",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 7335,
+                  "nodeType": "ExpressionStatement",
+                  "src": "726:47:29"
+                },
+                {
+                  "id": 7336,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "783:1:29"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 7338,
+            "name": "afterTime",
+            "nodeType": "ModifierDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 7329,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "713:2:29"
+            },
+            "src": "695:96:29",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 7349,
+              "nodeType": "Block",
+              "src": "900:44:29",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 7347,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "id": 7344,
+                        "name": "remainingTime",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7362,
+                        "src": "917:13:29",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
+                          "typeString": "function () view returns (uint256)"
+                        }
+                      },
+                      "id": 7345,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "917:15:29",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "30",
+                      "id": 7346,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "936:1:29",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "src": "917:20:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 7343,
+                  "id": 7348,
+                  "nodeType": "Return",
+                  "src": "910:27:29"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 7339,
+              "nodeType": "StructuredDocumentation",
+              "src": "797:48:29",
+              "text": "@notice return true if time period has ended"
+            },
+            "functionSelector": "ae951b2e",
+            "id": 7350,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isTimeEnded",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 7340,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "870:2:29"
+            },
+            "returnParameters": {
+              "id": 7343,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7342,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 7350,
+                  "src": "894:4:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7341,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "894:4:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "893:6:29"
+            },
+            "scope": 7433,
+            "src": "850:94:29",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 7361,
+              "nodeType": "Block",
+              "src": "1092:106:29",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 7359,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 7356,
+                      "name": "duration",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7293,
+                      "src": "1109:8:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "-",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "id": 7357,
+                        "name": "timeSinceStart",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7394,
+                        "src": "1120:14:29",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
+                          "typeString": "function () view returns (uint256)"
+                        }
+                      },
+                      "id": 7358,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1120:16:29",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1109:27:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 7355,
+                  "id": 7360,
+                  "nodeType": "Return",
+                  "src": "1102:34:29"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 7351,
+              "nodeType": "StructuredDocumentation",
+              "src": "950:82:29",
+              "text": "@notice number of seconds remaining until time is up\n @return remaining"
+            },
+            "functionSelector": "acc4bd08",
+            "id": 7362,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "remainingTime",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 7352,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1059:2:29"
+            },
+            "returnParameters": {
+              "id": 7355,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7354,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 7362,
+                  "src": "1083:7:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7353,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1083:7:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1082:9:29"
+            },
+            "scope": 7433,
+            "src": "1037:161:29",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 7393,
+              "nodeType": "Block",
+              "src": "1403:341:29",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "id": 7370,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "!",
+                    "prefix": true,
+                    "src": "1417:16:29",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "id": 7368,
+                        "name": "isTimeStarted",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7404,
+                        "src": "1418:13:29",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_view$__$returns$_t_bool_$",
+                          "typeString": "function () view returns (bool)"
+                        }
+                      },
+                      "id": 7369,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1418:15:29",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 7374,
+                  "nodeType": "IfStatement",
+                  "src": "1413:72:29",
+                  "trueBody": {
+                    "id": 7373,
+                    "nodeType": "Block",
+                    "src": "1435:50:29",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 7371,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1456:1:29",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "functionReturnParameters": 7367,
+                        "id": 7372,
+                        "nodeType": "Return",
+                        "src": "1449:8:29"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "assignments": [
+                    7376
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 7376,
+                      "mutability": "mutable",
+                      "name": "_duration",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 7393,
+                      "src": "1494:17:29",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 7375,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1494:7:29",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 7378,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "id": 7377,
+                    "name": "duration",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 7293,
+                    "src": "1514:8:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1494:28:29"
+                },
+                {
+                  "assignments": [
+                    7380
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 7380,
+                      "mutability": "mutable",
+                      "name": "timePassed",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 7393,
+                      "src": "1586:18:29",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 7379,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1586:7:29",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 7385,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 7384,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 7381,
+                        "name": "block",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": -4,
+                        "src": "1607:5:29",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_block",
+                          "typeString": "block"
+                        }
+                      },
+                      "id": 7382,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "timestamp",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1607:15:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "-",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 7383,
+                      "name": "startTime",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7291,
+                      "src": "1625:9:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1607:27:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1586:48:29"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "condition": {
+                      "argumentTypes": null,
+                      "commonType": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "id": 7388,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "argumentTypes": null,
+                        "id": 7386,
+                        "name": "timePassed",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7380,
+                        "src": "1690:10:29",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": ">",
+                      "rightExpression": {
+                        "argumentTypes": null,
+                        "id": 7387,
+                        "name": "_duration",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7376,
+                        "src": "1703:9:29",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "src": "1690:22:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "falseExpression": {
+                      "argumentTypes": null,
+                      "id": 7390,
+                      "name": "timePassed",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7380,
+                      "src": "1727:10:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 7391,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "Conditional",
+                    "src": "1690:47:29",
+                    "trueExpression": {
+                      "argumentTypes": null,
+                      "id": 7389,
+                      "name": "_duration",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7376,
+                      "src": "1715:9:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 7367,
+                  "id": 7392,
+                  "nodeType": "Return",
+                  "src": "1683:54:29"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 7363,
+              "nodeType": "StructuredDocumentation",
+              "src": "1204:138:29",
+              "text": "@notice number of seconds since contract was initialized\n @return timestamp\n @dev will be less than or equal to duration"
+            },
+            "functionSelector": "67fc6dea",
+            "id": 7394,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "timeSinceStart",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 7364,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1370:2:29"
+            },
+            "returnParameters": {
+              "id": 7367,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7366,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 7394,
+                  "src": "1394:7:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7365,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1394:7:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1393:9:29"
+            },
+            "scope": 7433,
+            "src": "1347:397:29",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 7403,
+              "nodeType": "Block",
+              "src": "1802:38:29",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 7401,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 7399,
+                      "name": "startTime",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7291,
+                      "src": "1819:9:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "!=",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "30",
+                      "id": 7400,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1832:1:29",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "src": "1819:14:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 7398,
+                  "id": 7402,
+                  "nodeType": "Return",
+                  "src": "1812:21:29"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "00d89b33",
+            "id": 7404,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isTimeStarted",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 7395,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1772:2:29"
+            },
+            "returnParameters": {
+              "id": 7398,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7397,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 7404,
+                  "src": "1796:4:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7396,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1796:4:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1795:6:29"
+            },
+            "scope": 7433,
+            "src": "1750:90:29",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 7417,
+              "nodeType": "Block",
+              "src": "1877:203:29",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 7410,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 7407,
+                      "name": "startTime",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7291,
+                      "src": "1941:9:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 7408,
+                        "name": "block",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": -4,
+                        "src": "1953:5:29",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_block",
+                          "typeString": "block"
+                        }
+                      },
+                      "id": 7409,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "timestamp",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1953:15:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1941:27:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 7411,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1941:27:29"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 7413,
+                          "name": "block",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -4,
+                          "src": "2057:5:29",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_block",
+                            "typeString": "block"
+                          }
+                        },
+                        "id": 7414,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "timestamp",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "2057:15:29",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 7412,
+                      "name": "TimerReset",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7301,
+                      "src": "2046:10:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 7415,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2046:27:29",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 7416,
+                  "nodeType": "EmitStatement",
+                  "src": "2041:32:29"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 7418,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_initTimed",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 7405,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1865:2:29"
+            },
+            "returnParameters": {
+              "id": 7406,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1877:0:29"
+            },
+            "scope": 7433,
+            "src": "1846:234:29",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 7431,
+              "nodeType": "Block",
+              "src": "2133:77:29",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 7425,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 7423,
+                      "name": "duration",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7293,
+                      "src": "2143:8:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 7424,
+                      "name": "_duration",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7420,
+                      "src": "2154:9:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "2143:20:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 7426,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2143:20:29"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 7428,
+                        "name": "_duration",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7420,
+                        "src": "2193:9:29",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 7427,
+                      "name": "DurationUpdate",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7297,
+                      "src": "2178:14:29",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 7429,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2178:25:29",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 7430,
+                  "nodeType": "EmitStatement",
+                  "src": "2173:30:29"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 7432,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_setDuration",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 7421,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7420,
+                  "mutability": "mutable",
+                  "name": "_duration",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 7432,
+                  "src": "2108:14:29",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7419,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2108:4:29",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2107:16:29"
+            },
+            "returnParameters": {
+              "id": 7422,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2133:0:29"
+            },
+            "scope": 7433,
+            "src": "2086:124:29",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 7434,
+        "src": "132:2080:29"
+      }
+    ],
+    "src": "0:2213:29"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/Users/parashar/Documents/defi/arthafinance/contracts/utils/Timed.sol",
+      "exportedSymbols": {
+        "Timed": [
+          7433
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.6",
+            ".0"
+          ]
+        },
+        "id": 7284,
+        "name": "PragmaDirective",
+        "src": "0:23:29"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "experimental",
+            "ABIEncoderV2"
+          ]
+        },
+        "id": 7285,
+        "name": "PragmaDirective",
+        "src": "24:33:29"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 10887,
+          "absolutePath": "@openzeppelin/contracts/utils/SafeCast.sol",
+          "file": "@openzeppelin/contracts/utils/SafeCast.sol",
+          "scope": 7434,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 7286,
+        "name": "ImportDirective",
+        "src": "59:52:29"
+      },
+      {
+        "attributes": {
+          "abstract": true,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            7433
+          ],
+          "name": "Timed",
+          "scope": 7434
+        },
+        "children": [
+          {
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "SafeCast",
+                  "referencedDeclaration": 10886,
+                  "type": "library SafeCast"
+                },
+                "id": 7287,
+                "name": "UserDefinedTypeName",
+                "src": "168:8:29"
+              },
+              {
+                "attributes": {
+                  "name": "uint256",
+                  "type": "uint256"
+                },
+                "id": 7288,
+                "name": "ElementaryTypeName",
+                "src": "181:7:29"
+              }
+            ],
+            "id": 7289,
+            "name": "UsingForDirective",
+            "src": "162:27:29"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "functionSelector": "78e97925",
+              "mutability": "mutable",
+              "name": "startTime",
+              "overrides": null,
+              "scope": 7433,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint256",
+                  "type": "uint256"
+                },
+                "id": 7290,
+                "name": "ElementaryTypeName",
+                "src": "251:7:29"
+              }
+            ],
+            "id": 7291,
+            "name": "VariableDeclaration",
+            "src": "251:24:29"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "functionSelector": "0fb5a6b4",
+              "mutability": "mutable",
+              "name": "duration",
+              "overrides": null,
+              "scope": 7433,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint256",
+                  "type": "uint256"
+                },
+                "id": 7292,
+                "name": "ElementaryTypeName",
+                "src": "331:7:29"
+              }
+            ],
+            "id": 7293,
+            "name": "VariableDeclaration",
+            "src": "331:23:29"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "DurationUpdate"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "_duration",
+                      "overrides": null,
+                      "scope": 7297,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7294,
+                        "name": "ElementaryTypeName",
+                        "src": "382:7:29"
+                      }
+                    ],
+                    "id": 7295,
+                    "name": "VariableDeclaration",
+                    "src": "382:17:29"
+                  }
+                ],
+                "id": 7296,
+                "name": "ParameterList",
+                "src": "381:19:29"
+              }
+            ],
+            "id": 7297,
+            "name": "EventDefinition",
+            "src": "361:40:29"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "TimerReset"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "_startTime",
+                      "overrides": null,
+                      "scope": 7301,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7298,
+                        "name": "ElementaryTypeName",
+                        "src": "424:7:29"
+                      }
+                    ],
+                    "id": 7299,
+                    "name": "VariableDeclaration",
+                    "src": "424:18:29"
+                  }
+                ],
+                "id": 7300,
+                "name": "ParameterList",
+                "src": "423:20:29"
+              }
+            ],
+            "id": 7301,
+            "name": "EventDefinition",
+            "src": "407:37:29"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "overrides": null,
+              "scope": 7433,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_duration",
+                      "overrides": null,
+                      "scope": 7311,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7302,
+                        "name": "ElementaryTypeName",
+                        "src": "462:7:29"
+                      }
+                    ],
+                    "id": 7303,
+                    "name": "VariableDeclaration",
+                    "src": "462:17:29"
+                  }
+                ],
+                "id": 7304,
+                "name": "ParameterList",
+                "src": "461:19:29"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7305,
+                "name": "ParameterList",
+                "src": "488:0:29"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7432,
+                              "type": "function (uint256)",
+                              "value": "_setDuration"
+                            },
+                            "id": 7306,
+                            "name": "Identifier",
+                            "src": "498:12:29"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7303,
+                              "type": "uint256",
+                              "value": "_duration"
+                            },
+                            "id": 7307,
+                            "name": "Identifier",
+                            "src": "511:9:29"
+                          }
+                        ],
+                        "id": 7308,
+                        "name": "FunctionCall",
+                        "src": "498:23:29"
+                      }
+                    ],
+                    "id": 7309,
+                    "name": "ExpressionStatement",
+                    "src": "498:23:29"
+                  }
+                ],
+                "id": 7310,
+                "name": "Block",
+                "src": "488:40:29"
+              }
+            ],
+            "id": 7311,
+            "name": "FunctionDefinition",
+            "src": "450:78:29"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "name": "duringTime",
+              "overrides": null,
+              "virtual": false,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7312,
+                "name": "ParameterList",
+                "src": "553:2:29"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                },
+                                {
+                                  "typeIdentifier": "t_stringliteral_190e07a064d1d6457df22fd58895b6cc1a4a3092bba467fa8a103ed94719098f",
+                                  "typeString": "literal_string \"Timed: time not started\""
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                -18,
+                                -18
+                              ],
+                              "referencedDeclaration": -18,
+                              "type": "function (bool,string memory) pure",
+                              "value": "require"
+                            },
+                            "id": 7313,
+                            "name": "Identifier",
+                            "src": "566:7:29"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "arguments": [
+                                null
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "bool",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    null
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7404,
+                                  "type": "function () view returns (bool)",
+                                  "value": "isTimeStarted"
+                                },
+                                "id": 7314,
+                                "name": "Identifier",
+                                "src": "574:13:29"
+                              }
+                            ],
+                            "id": 7315,
+                            "name": "FunctionCall",
+                            "src": "574:15:29"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "54696d65643a2074696d65206e6f742073746172746564",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"Timed: time not started\"",
+                              "value": "Timed: time not started"
+                            },
+                            "id": 7316,
+                            "name": "Literal",
+                            "src": "591:25:29"
+                          }
+                        ],
+                        "id": 7317,
+                        "name": "FunctionCall",
+                        "src": "566:51:29"
+                      }
+                    ],
+                    "id": 7318,
+                    "name": "ExpressionStatement",
+                    "src": "566:51:29"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                },
+                                {
+                                  "typeIdentifier": "t_stringliteral_772fbf8040c7944616e0580f0bb6faefdfc9ccd0a36c2302843787e947033ad1",
+                                  "typeString": "literal_string \"Timed: time ended\""
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                -18,
+                                -18
+                              ],
+                              "referencedDeclaration": -18,
+                              "type": "function (bool,string memory) pure",
+                              "value": "require"
+                            },
+                            "id": 7319,
+                            "name": "Identifier",
+                            "src": "627:7:29"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "!",
+                              "prefix": true,
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "arguments": [
+                                    null
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "isStructConstructorCall": false,
+                                  "lValueRequested": false,
+                                  "names": [
+                                    null
+                                  ],
+                                  "tryCall": false,
+                                  "type": "bool",
+                                  "type_conversion": false
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": [
+                                        null
+                                      ],
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 7350,
+                                      "type": "function () view returns (bool)",
+                                      "value": "isTimeEnded"
+                                    },
+                                    "id": 7320,
+                                    "name": "Identifier",
+                                    "src": "636:11:29"
+                                  }
+                                ],
+                                "id": 7321,
+                                "name": "FunctionCall",
+                                "src": "636:13:29"
+                              }
+                            ],
+                            "id": 7322,
+                            "name": "UnaryOperation",
+                            "src": "635:14:29"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "54696d65643a2074696d6520656e646564",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"Timed: time ended\"",
+                              "value": "Timed: time ended"
+                            },
+                            "id": 7323,
+                            "name": "Literal",
+                            "src": "651:19:29"
+                          }
+                        ],
+                        "id": 7324,
+                        "name": "FunctionCall",
+                        "src": "627:44:29"
+                      }
+                    ],
+                    "id": 7325,
+                    "name": "ExpressionStatement",
+                    "src": "627:44:29"
+                  },
+                  {
+                    "id": 7326,
+                    "name": "PlaceholderStatement",
+                    "src": "681:1:29"
+                  }
+                ],
+                "id": 7327,
+                "name": "Block",
+                "src": "556:133:29"
+              }
+            ],
+            "id": 7328,
+            "name": "ModifierDefinition",
+            "src": "534:155:29"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "name": "afterTime",
+              "overrides": null,
+              "virtual": false,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7329,
+                "name": "ParameterList",
+                "src": "713:2:29"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                },
+                                {
+                                  "typeIdentifier": "t_stringliteral_0eee5efcf6cb6f3cd0b2587835314f5d0ca1c2f3b6c8791be31261527e4a4516",
+                                  "typeString": "literal_string \"Timed: time not ended\""
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                -18,
+                                -18
+                              ],
+                              "referencedDeclaration": -18,
+                              "type": "function (bool,string memory) pure",
+                              "value": "require"
+                            },
+                            "id": 7330,
+                            "name": "Identifier",
+                            "src": "726:7:29"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "arguments": [
+                                null
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "bool",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    null
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7350,
+                                  "type": "function () view returns (bool)",
+                                  "value": "isTimeEnded"
+                                },
+                                "id": 7331,
+                                "name": "Identifier",
+                                "src": "734:11:29"
+                              }
+                            ],
+                            "id": 7332,
+                            "name": "FunctionCall",
+                            "src": "734:13:29"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "54696d65643a2074696d65206e6f7420656e646564",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"Timed: time not ended\"",
+                              "value": "Timed: time not ended"
+                            },
+                            "id": 7333,
+                            "name": "Literal",
+                            "src": "749:23:29"
+                          }
+                        ],
+                        "id": 7334,
+                        "name": "FunctionCall",
+                        "src": "726:47:29"
+                      }
+                    ],
+                    "id": 7335,
+                    "name": "ExpressionStatement",
+                    "src": "726:47:29"
+                  },
+                  {
+                    "id": 7336,
+                    "name": "PlaceholderStatement",
+                    "src": "783:1:29"
+                  }
+                ],
+                "id": 7337,
+                "name": "Block",
+                "src": "716:75:29"
+              }
+            ],
+            "id": 7338,
+            "name": "ModifierDefinition",
+            "src": "695:96:29"
+          },
+          {
+            "attributes": {
+              "functionSelector": "ae951b2e",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "isTimeEnded",
+              "overrides": null,
+              "scope": 7433,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice return true if time period has ended"
+                },
+                "id": 7339,
+                "name": "StructuredDocumentation",
+                "src": "797:48:29"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7340,
+                "name": "ParameterList",
+                "src": "870:2:29"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 7350,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 7341,
+                        "name": "ElementaryTypeName",
+                        "src": "894:4:29"
+                      }
+                    ],
+                    "id": 7342,
+                    "name": "VariableDeclaration",
+                    "src": "894:4:29"
+                  }
+                ],
+                "id": 7343,
+                "name": "ParameterList",
+                "src": "893:6:29"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 7343
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "==",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "arguments": [
+                                null
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "uint256",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    null
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7362,
+                                  "type": "function () view returns (uint256)",
+                                  "value": "remainingTime"
+                                },
+                                "id": 7344,
+                                "name": "Identifier",
+                                "src": "917:13:29"
+                              }
+                            ],
+                            "id": 7345,
+                            "name": "FunctionCall",
+                            "src": "917:15:29"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "30",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 0",
+                              "value": "0"
+                            },
+                            "id": 7346,
+                            "name": "Literal",
+                            "src": "936:1:29"
+                          }
+                        ],
+                        "id": 7347,
+                        "name": "BinaryOperation",
+                        "src": "917:20:29"
+                      }
+                    ],
+                    "id": 7348,
+                    "name": "Return",
+                    "src": "910:27:29"
+                  }
+                ],
+                "id": 7349,
+                "name": "Block",
+                "src": "900:44:29"
+              }
+            ],
+            "id": 7350,
+            "name": "FunctionDefinition",
+            "src": "850:94:29"
+          },
+          {
+            "attributes": {
+              "functionSelector": "acc4bd08",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "remainingTime",
+              "overrides": null,
+              "scope": 7433,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice number of seconds remaining until time is up\n @return remaining"
+                },
+                "id": 7351,
+                "name": "StructuredDocumentation",
+                "src": "950:82:29"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7352,
+                "name": "ParameterList",
+                "src": "1059:2:29"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 7362,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7353,
+                        "name": "ElementaryTypeName",
+                        "src": "1083:7:29"
+                      }
+                    ],
+                    "id": 7354,
+                    "name": "VariableDeclaration",
+                    "src": "1083:7:29"
+                  }
+                ],
+                "id": 7355,
+                "name": "ParameterList",
+                "src": "1082:9:29"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 7355
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "-",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7293,
+                              "type": "uint256",
+                              "value": "duration"
+                            },
+                            "id": 7356,
+                            "name": "Identifier",
+                            "src": "1109:8:29"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "arguments": [
+                                null
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "uint256",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    null
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7394,
+                                  "type": "function () view returns (uint256)",
+                                  "value": "timeSinceStart"
+                                },
+                                "id": 7357,
+                                "name": "Identifier",
+                                "src": "1120:14:29"
+                              }
+                            ],
+                            "id": 7358,
+                            "name": "FunctionCall",
+                            "src": "1120:16:29"
+                          }
+                        ],
+                        "id": 7359,
+                        "name": "BinaryOperation",
+                        "src": "1109:27:29"
+                      }
+                    ],
+                    "id": 7360,
+                    "name": "Return",
+                    "src": "1102:34:29"
+                  }
+                ],
+                "id": 7361,
+                "name": "Block",
+                "src": "1092:106:29"
+              }
+            ],
+            "id": 7362,
+            "name": "FunctionDefinition",
+            "src": "1037:161:29"
+          },
+          {
+            "attributes": {
+              "functionSelector": "67fc6dea",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "timeSinceStart",
+              "overrides": null,
+              "scope": 7433,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice number of seconds since contract was initialized\n @return timestamp\n @dev will be less than or equal to duration"
+                },
+                "id": 7363,
+                "name": "StructuredDocumentation",
+                "src": "1204:138:29"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7364,
+                "name": "ParameterList",
+                "src": "1370:2:29"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 7394,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7365,
+                        "name": "ElementaryTypeName",
+                        "src": "1394:7:29"
+                      }
+                    ],
+                    "id": 7366,
+                    "name": "VariableDeclaration",
+                    "src": "1394:7:29"
+                  }
+                ],
+                "id": 7367,
+                "name": "ParameterList",
+                "src": "1393:9:29"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "falseBody": null
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "!",
+                          "prefix": true,
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "arguments": [
+                                null
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "bool",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    null
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7404,
+                                  "type": "function () view returns (bool)",
+                                  "value": "isTimeStarted"
+                                },
+                                "id": 7368,
+                                "name": "Identifier",
+                                "src": "1418:13:29"
+                              }
+                            ],
+                            "id": 7369,
+                            "name": "FunctionCall",
+                            "src": "1418:15:29"
+                          }
+                        ],
+                        "id": 7370,
+                        "name": "UnaryOperation",
+                        "src": "1417:16:29"
+                      },
+                      {
+                        "children": [
+                          {
+                            "attributes": {
+                              "functionReturnParameters": 7367
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "hexvalue": "30",
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "subdenomination": null,
+                                  "token": "number",
+                                  "type": "int_const 0",
+                                  "value": "0"
+                                },
+                                "id": 7371,
+                                "name": "Literal",
+                                "src": "1456:1:29"
+                              }
+                            ],
+                            "id": 7372,
+                            "name": "Return",
+                            "src": "1449:8:29"
+                          }
+                        ],
+                        "id": 7373,
+                        "name": "Block",
+                        "src": "1435:50:29"
+                      }
+                    ],
+                    "id": 7374,
+                    "name": "IfStatement",
+                    "src": "1413:72:29"
+                  },
+                  {
+                    "attributes": {
+                      "assignments": [
+                        7376
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "mutability": "mutable",
+                          "name": "_duration",
+                          "overrides": null,
+                          "scope": 7393,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "uint256",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint256",
+                              "type": "uint256"
+                            },
+                            "id": 7375,
+                            "name": "ElementaryTypeName",
+                            "src": "1494:7:29"
+                          }
+                        ],
+                        "id": 7376,
+                        "name": "VariableDeclaration",
+                        "src": "1494:17:29"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 7293,
+                          "type": "uint256",
+                          "value": "duration"
+                        },
+                        "id": 7377,
+                        "name": "Identifier",
+                        "src": "1514:8:29"
+                      }
+                    ],
+                    "id": 7378,
+                    "name": "VariableDeclarationStatement",
+                    "src": "1494:28:29"
+                  },
+                  {
+                    "attributes": {
+                      "assignments": [
+                        7380
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "mutability": "mutable",
+                          "name": "timePassed",
+                          "overrides": null,
+                          "scope": 7393,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "uint256",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint256",
+                              "type": "uint256"
+                            },
+                            "id": 7379,
+                            "name": "ElementaryTypeName",
+                            "src": "1586:7:29"
+                          }
+                        ],
+                        "id": 7380,
+                        "name": "VariableDeclaration",
+                        "src": "1586:18:29"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "-",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "timestamp",
+                              "referencedDeclaration": null,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": -4,
+                                  "type": "block",
+                                  "value": "block"
+                                },
+                                "id": 7381,
+                                "name": "Identifier",
+                                "src": "1607:5:29"
+                              }
+                            ],
+                            "id": 7382,
+                            "name": "MemberAccess",
+                            "src": "1607:15:29"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7291,
+                              "type": "uint256",
+                              "value": "startTime"
+                            },
+                            "id": 7383,
+                            "name": "Identifier",
+                            "src": "1625:9:29"
+                          }
+                        ],
+                        "id": 7384,
+                        "name": "BinaryOperation",
+                        "src": "1607:27:29"
+                      }
+                    ],
+                    "id": 7385,
+                    "name": "VariableDeclarationStatement",
+                    "src": "1586:48:29"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 7367
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": ">",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7380,
+                                  "type": "uint256",
+                                  "value": "timePassed"
+                                },
+                                "id": 7386,
+                                "name": "Identifier",
+                                "src": "1690:10:29"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7376,
+                                  "type": "uint256",
+                                  "value": "_duration"
+                                },
+                                "id": 7387,
+                                "name": "Identifier",
+                                "src": "1703:9:29"
+                              }
+                            ],
+                            "id": 7388,
+                            "name": "BinaryOperation",
+                            "src": "1690:22:29"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7376,
+                              "type": "uint256",
+                              "value": "_duration"
+                            },
+                            "id": 7389,
+                            "name": "Identifier",
+                            "src": "1715:9:29"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7380,
+                              "type": "uint256",
+                              "value": "timePassed"
+                            },
+                            "id": 7390,
+                            "name": "Identifier",
+                            "src": "1727:10:29"
+                          }
+                        ],
+                        "id": 7391,
+                        "name": "Conditional",
+                        "src": "1690:47:29"
+                      }
+                    ],
+                    "id": 7392,
+                    "name": "Return",
+                    "src": "1683:54:29"
+                  }
+                ],
+                "id": 7393,
+                "name": "Block",
+                "src": "1403:341:29"
+              }
+            ],
+            "id": 7394,
+            "name": "FunctionDefinition",
+            "src": "1347:397:29"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "functionSelector": "00d89b33",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "isTimeStarted",
+              "overrides": null,
+              "scope": 7433,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7395,
+                "name": "ParameterList",
+                "src": "1772:2:29"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 7404,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 7396,
+                        "name": "ElementaryTypeName",
+                        "src": "1796:4:29"
+                      }
+                    ],
+                    "id": 7397,
+                    "name": "VariableDeclaration",
+                    "src": "1796:4:29"
+                  }
+                ],
+                "id": 7398,
+                "name": "ParameterList",
+                "src": "1795:6:29"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 7398
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "!=",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7291,
+                              "type": "uint256",
+                              "value": "startTime"
+                            },
+                            "id": 7399,
+                            "name": "Identifier",
+                            "src": "1819:9:29"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "30",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 0",
+                              "value": "0"
+                            },
+                            "id": 7400,
+                            "name": "Literal",
+                            "src": "1832:1:29"
+                          }
+                        ],
+                        "id": 7401,
+                        "name": "BinaryOperation",
+                        "src": "1819:14:29"
+                      }
+                    ],
+                    "id": 7402,
+                    "name": "Return",
+                    "src": "1812:21:29"
+                  }
+                ],
+                "id": 7403,
+                "name": "Block",
+                "src": "1802:38:29"
+              }
+            ],
+            "id": 7404,
+            "name": "FunctionDefinition",
+            "src": "1750:90:29"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "_initTimed",
+              "overrides": null,
+              "scope": 7433,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7405,
+                "name": "ParameterList",
+                "src": "1865:2:29"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7406,
+                "name": "ParameterList",
+                "src": "1877:0:29"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7291,
+                              "type": "uint256",
+                              "value": "startTime"
+                            },
+                            "id": 7407,
+                            "name": "Identifier",
+                            "src": "1941:9:29"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "timestamp",
+                              "referencedDeclaration": null,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": -4,
+                                  "type": "block",
+                                  "value": "block"
+                                },
+                                "id": 7408,
+                                "name": "Identifier",
+                                "src": "1953:5:29"
+                              }
+                            ],
+                            "id": 7409,
+                            "name": "MemberAccess",
+                            "src": "1953:15:29"
+                          }
+                        ],
+                        "id": 7410,
+                        "name": "Assignment",
+                        "src": "1941:27:29"
+                      }
+                    ],
+                    "id": 7411,
+                    "name": "ExpressionStatement",
+                    "src": "1941:27:29"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7301,
+                              "type": "function (uint256)",
+                              "value": "TimerReset"
+                            },
+                            "id": 7412,
+                            "name": "Identifier",
+                            "src": "2046:10:29"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "timestamp",
+                              "referencedDeclaration": null,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": -4,
+                                  "type": "block",
+                                  "value": "block"
+                                },
+                                "id": 7413,
+                                "name": "Identifier",
+                                "src": "2057:5:29"
+                              }
+                            ],
+                            "id": 7414,
+                            "name": "MemberAccess",
+                            "src": "2057:15:29"
+                          }
+                        ],
+                        "id": 7415,
+                        "name": "FunctionCall",
+                        "src": "2046:27:29"
+                      }
+                    ],
+                    "id": 7416,
+                    "name": "EmitStatement",
+                    "src": "2041:32:29"
+                  }
+                ],
+                "id": 7417,
+                "name": "Block",
+                "src": "1877:203:29"
+              }
+            ],
+            "id": 7418,
+            "name": "FunctionDefinition",
+            "src": "1846:234:29"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "_setDuration",
+              "overrides": null,
+              "scope": 7433,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_duration",
+                      "overrides": null,
+                      "scope": 7432,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 7419,
+                        "name": "ElementaryTypeName",
+                        "src": "2108:4:29"
+                      }
+                    ],
+                    "id": 7420,
+                    "name": "VariableDeclaration",
+                    "src": "2108:14:29"
+                  }
+                ],
+                "id": 7421,
+                "name": "ParameterList",
+                "src": "2107:16:29"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7422,
+                "name": "ParameterList",
+                "src": "2133:0:29"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7293,
+                              "type": "uint256",
+                              "value": "duration"
+                            },
+                            "id": 7423,
+                            "name": "Identifier",
+                            "src": "2143:8:29"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7420,
+                              "type": "uint256",
+                              "value": "_duration"
+                            },
+                            "id": 7424,
+                            "name": "Identifier",
+                            "src": "2154:9:29"
+                          }
+                        ],
+                        "id": 7425,
+                        "name": "Assignment",
+                        "src": "2143:20:29"
+                      }
+                    ],
+                    "id": 7426,
+                    "name": "ExpressionStatement",
+                    "src": "2143:20:29"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7297,
+                              "type": "function (uint256)",
+                              "value": "DurationUpdate"
+                            },
+                            "id": 7427,
+                            "name": "Identifier",
+                            "src": "2178:14:29"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7420,
+                              "type": "uint256",
+                              "value": "_duration"
+                            },
+                            "id": 7428,
+                            "name": "Identifier",
+                            "src": "2193:9:29"
+                          }
+                        ],
+                        "id": 7429,
+                        "name": "FunctionCall",
+                        "src": "2178:25:29"
+                      }
+                    ],
+                    "id": 7430,
+                    "name": "EmitStatement",
+                    "src": "2173:30:29"
+                  }
+                ],
+                "id": 7431,
+                "name": "Block",
+                "src": "2133:77:29"
+              }
+            ],
+            "id": 7432,
+            "name": "FunctionDefinition",
+            "src": "2086:124:29"
+          }
+        ],
+        "id": 7433,
+        "name": "ContractDefinition",
+        "src": "132:2080:29"
+      }
+    ],
+    "id": 7434,
+    "name": "SourceUnit",
+    "src": "0:2213:29"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.6+commit.6c089d02.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-06-03T16:05:15.761Z",
+  "devdoc": {
+    "methods": {
+      "timeSinceStart()": {
+        "details": "will be less than or equal to duration",
+        "returns": {
+          "_0": "timestamp"
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "isTimeEnded()": {
+        "notice": "return true if time period has ended"
+      },
+      "remainingTime()": {
+        "notice": "number of seconds remaining until time is up"
+      },
+      "timeSinceStart()": {
+        "notice": "number of seconds since contract was initialized"
+      }
+    }
+  }
+}

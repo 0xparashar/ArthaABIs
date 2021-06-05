@@ -1,0 +1,1111 @@
+{
+  "contractName": "IRewardsDistributor",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "ArthaWithdraw",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "governorWithdrawArtha",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalReward",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "releasedReward",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "unreleasedReward",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "rewardBalance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "distributedRewards",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"ArthaWithdraw\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"distributedRewards\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"governorWithdrawArtha\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"releasedReward\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalReward\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"unreleasedReward\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Artha Protocol\",\"methods\":{},\"title\":\"Rewards Distributor interface\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/parashar/Documents/defi/arthafinance/contracts/rewards/IRewardsDistributor.sol\":\"IRewardsDistributor\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/parashar/Documents/defi/arthafinance/contracts/rewards/IRewardsDistributor.sol\":{\"keccak256\":\"0x92ea435581937897143b21483d6613f773de4529182b0fcedbc319e04330077e\",\"urls\":[\"bzz-raw://ecc118877eab65931c0209453f3545faa92c056789700c147a536fec0973a3a4\",\"dweb:/ipfs/QmUSmDtVe1ziNJopnrk9D7cYVvy3YRwZ4QwUtxE4P16T2p\"]},\"/Users/parashar/Documents/defi/arthafinance/contracts/rewards/IStakingRewards.sol\":{\"keccak256\":\"0x096bac3b7fda79956b6b707f2593bfcb187a1154478334a4489d803d982b29bd\",\"urls\":[\"bzz-raw://6bbe9970e85085f0f918663c4b2c248e81a39fd3eb3da1d018df4ac44d5bcdda\",\"dweb:/ipfs/QmQUmT26LnEsoaaTAnKL26HhMPtVGxkYGBf996tgZe7up4\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x5f02220344881ce43204ae4a6281145a67bc52c2bb1290a791857df3d19d78f5\",\"urls\":[\"bzz-raw://24427744bd3e6cb73c17010119af12a318289c0253a4d9acb8576c9fb3797b08\",\"dweb:/ipfs/QmTLDqpKRBuxGxRAmjgXt9AkXyACW3MtKzi7PYjm5iMfGC\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.6.0;\n\nimport \"./IStakingRewards.sol\";\n\n/// @title Rewards Distributor interface\n/// @author Artha Protocol\ninterface IRewardsDistributor {\n    // ----------- Events -----------\n\n    event ArthaWithdraw(\n        uint256 _amount\n    );\n\n    // ----------- Governor-only changing API -----------\n\n    function governorWithdrawArtha(uint256 amount) external;\n\n    // ----------- Getters -----------\n\n    function totalReward() external view returns (uint256);\n\n    function releasedReward() external view returns (uint256);\n\n    function unreleasedReward() external view returns (uint256);\n\n    function rewardBalance() external view returns (uint256);\n\n    function distributedRewards() external view returns (uint256);\n\n}\n",
+  "sourcePath": "/Users/parashar/Documents/defi/arthafinance/contracts/rewards/IRewardsDistributor.sol",
+  "ast": {
+    "absolutePath": "/Users/parashar/Documents/defi/arthafinance/contracts/rewards/IRewardsDistributor.sol",
+    "exportedSymbols": {
+      "IRewardsDistributor": [
+        6816
+      ]
+    },
+    "id": 6817,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6779,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:23"
+      },
+      {
+        "absolutePath": "/Users/parashar/Documents/defi/arthafinance/contracts/rewards/IStakingRewards.sol",
+        "file": "./IStakingRewards.sol",
+        "id": 6780,
+        "nodeType": "ImportDirective",
+        "scope": 6817,
+        "sourceUnit": 6934,
+        "src": "25:31:23",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 6781,
+          "nodeType": "StructuredDocumentation",
+          "src": "58:68:23",
+          "text": "@title Rewards Distributor interface\n @author Artha Protocol"
+        },
+        "fullyImplemented": false,
+        "id": 6816,
+        "linearizedBaseContracts": [
+          6816
+        ],
+        "name": "IRewardsDistributor",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 6785,
+            "name": "ArthaWithdraw",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6784,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6783,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6785,
+                  "src": "230:15:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6782,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "230:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "220:31:23"
+            },
+            "src": "201:51:23"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "c252676a",
+            "id": 6790,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "governorWithdrawArtha",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6788,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6787,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6790,
+                  "src": "348:14:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6786,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "348:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "347:16:23"
+            },
+            "returnParameters": {
+              "id": 6789,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "372:0:23"
+            },
+            "scope": 6816,
+            "src": "317:56:23",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "750142e6",
+            "id": 6795,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "totalReward",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6791,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "439:2:23"
+            },
+            "returnParameters": {
+              "id": 6794,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6793,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6795,
+                  "src": "465:7:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6792,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "465:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "464:9:23"
+            },
+            "scope": 6816,
+            "src": "419:55:23",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "8043c10c",
+            "id": 6800,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "releasedReward",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6796,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "503:2:23"
+            },
+            "returnParameters": {
+              "id": 6799,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6798,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6800,
+                  "src": "529:7:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6797,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "529:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "528:9:23"
+            },
+            "scope": 6816,
+            "src": "480:58:23",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "b617c3bb",
+            "id": 6805,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "unreleasedReward",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6801,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "569:2:23"
+            },
+            "returnParameters": {
+              "id": 6804,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6803,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6805,
+                  "src": "595:7:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6802,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "595:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "594:9:23"
+            },
+            "scope": 6816,
+            "src": "544:60:23",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "aa5c3ab4",
+            "id": 6810,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "rewardBalance",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6806,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "632:2:23"
+            },
+            "returnParameters": {
+              "id": 6809,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6808,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6810,
+                  "src": "658:7:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6807,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "658:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "657:9:23"
+            },
+            "scope": 6816,
+            "src": "610:57:23",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "f3e14f1e",
+            "id": 6815,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "distributedRewards",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6811,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "700:2:23"
+            },
+            "returnParameters": {
+              "id": 6814,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6813,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6815,
+                  "src": "726:7:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6812,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "726:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "725:9:23"
+            },
+            "scope": 6816,
+            "src": "673:62:23",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 6817,
+        "src": "126:612:23"
+      }
+    ],
+    "src": "0:739:23"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/Users/parashar/Documents/defi/arthafinance/contracts/rewards/IRewardsDistributor.sol",
+      "exportedSymbols": {
+        "IRewardsDistributor": [
+          6816
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.6",
+            ".0"
+          ]
+        },
+        "id": 6779,
+        "name": "PragmaDirective",
+        "src": "0:23:23"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 6934,
+          "absolutePath": "/Users/parashar/Documents/defi/arthafinance/contracts/rewards/IStakingRewards.sol",
+          "file": "./IStakingRewards.sol",
+          "scope": 6817,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 6780,
+        "name": "ImportDirective",
+        "src": "25:31:23"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            6816
+          ],
+          "name": "IRewardsDistributor",
+          "scope": 6817
+        },
+        "children": [
+          {
+            "attributes": {
+              "text": "@title Rewards Distributor interface\n @author Artha Protocol"
+            },
+            "id": 6781,
+            "name": "StructuredDocumentation",
+            "src": "58:68:23"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "ArthaWithdraw"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "_amount",
+                      "overrides": null,
+                      "scope": 6785,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 6782,
+                        "name": "ElementaryTypeName",
+                        "src": "230:7:23"
+                      }
+                    ],
+                    "id": 6783,
+                    "name": "VariableDeclaration",
+                    "src": "230:15:23"
+                  }
+                ],
+                "id": 6784,
+                "name": "ParameterList",
+                "src": "220:31:23"
+              }
+            ],
+            "id": 6785,
+            "name": "EventDefinition",
+            "src": "201:51:23"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "c252676a",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "governorWithdrawArtha",
+              "overrides": null,
+              "scope": 6816,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "amount",
+                      "overrides": null,
+                      "scope": 6790,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 6786,
+                        "name": "ElementaryTypeName",
+                        "src": "348:7:23"
+                      }
+                    ],
+                    "id": 6787,
+                    "name": "VariableDeclaration",
+                    "src": "348:14:23"
+                  }
+                ],
+                "id": 6788,
+                "name": "ParameterList",
+                "src": "347:16:23"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 6789,
+                "name": "ParameterList",
+                "src": "372:0:23"
+              }
+            ],
+            "id": 6790,
+            "name": "FunctionDefinition",
+            "src": "317:56:23"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "750142e6",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "totalReward",
+              "overrides": null,
+              "scope": 6816,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 6791,
+                "name": "ParameterList",
+                "src": "439:2:23"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 6795,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 6792,
+                        "name": "ElementaryTypeName",
+                        "src": "465:7:23"
+                      }
+                    ],
+                    "id": 6793,
+                    "name": "VariableDeclaration",
+                    "src": "465:7:23"
+                  }
+                ],
+                "id": 6794,
+                "name": "ParameterList",
+                "src": "464:9:23"
+              }
+            ],
+            "id": 6795,
+            "name": "FunctionDefinition",
+            "src": "419:55:23"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "8043c10c",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "releasedReward",
+              "overrides": null,
+              "scope": 6816,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 6796,
+                "name": "ParameterList",
+                "src": "503:2:23"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 6800,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 6797,
+                        "name": "ElementaryTypeName",
+                        "src": "529:7:23"
+                      }
+                    ],
+                    "id": 6798,
+                    "name": "VariableDeclaration",
+                    "src": "529:7:23"
+                  }
+                ],
+                "id": 6799,
+                "name": "ParameterList",
+                "src": "528:9:23"
+              }
+            ],
+            "id": 6800,
+            "name": "FunctionDefinition",
+            "src": "480:58:23"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "b617c3bb",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "unreleasedReward",
+              "overrides": null,
+              "scope": 6816,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 6801,
+                "name": "ParameterList",
+                "src": "569:2:23"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 6805,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 6802,
+                        "name": "ElementaryTypeName",
+                        "src": "595:7:23"
+                      }
+                    ],
+                    "id": 6803,
+                    "name": "VariableDeclaration",
+                    "src": "595:7:23"
+                  }
+                ],
+                "id": 6804,
+                "name": "ParameterList",
+                "src": "594:9:23"
+              }
+            ],
+            "id": 6805,
+            "name": "FunctionDefinition",
+            "src": "544:60:23"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "aa5c3ab4",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "rewardBalance",
+              "overrides": null,
+              "scope": 6816,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 6806,
+                "name": "ParameterList",
+                "src": "632:2:23"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 6810,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 6807,
+                        "name": "ElementaryTypeName",
+                        "src": "658:7:23"
+                      }
+                    ],
+                    "id": 6808,
+                    "name": "VariableDeclaration",
+                    "src": "658:7:23"
+                  }
+                ],
+                "id": 6809,
+                "name": "ParameterList",
+                "src": "657:9:23"
+              }
+            ],
+            "id": 6810,
+            "name": "FunctionDefinition",
+            "src": "610:57:23"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "f3e14f1e",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "distributedRewards",
+              "overrides": null,
+              "scope": 6816,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 6811,
+                "name": "ParameterList",
+                "src": "700:2:23"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 6815,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 6812,
+                        "name": "ElementaryTypeName",
+                        "src": "726:7:23"
+                      }
+                    ],
+                    "id": 6813,
+                    "name": "VariableDeclaration",
+                    "src": "726:7:23"
+                  }
+                ],
+                "id": 6814,
+                "name": "ParameterList",
+                "src": "725:9:23"
+              }
+            ],
+            "id": 6815,
+            "name": "FunctionDefinition",
+            "src": "673:62:23"
+          }
+        ],
+        "id": 6816,
+        "name": "ContractDefinition",
+        "src": "126:612:23"
+      }
+    ],
+    "id": 6817,
+    "name": "SourceUnit",
+    "src": "0:739:23"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.6+commit.6c089d02.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-06-03T16:05:15.747Z",
+  "devdoc": {
+    "author": "Artha Protocol",
+    "methods": {},
+    "title": "Rewards Distributor interface"
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

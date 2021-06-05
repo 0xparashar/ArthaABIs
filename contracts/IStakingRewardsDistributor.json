@@ -1,0 +1,2463 @@
+{
+  "contractName": "IStakingRewardsDistributor",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "ArthaWithdraw",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Drip",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_frequency",
+          "type": "uint256"
+        }
+      ],
+      "name": "FrequencyUpdate",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_incentiveAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "IncentiveUpdate",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_stakingContract",
+          "type": "address"
+        }
+      ],
+      "name": "StakingContractUpdate",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "distributedRewards",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "governorWithdrawArtha",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "releasedReward",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "rewardBalance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalReward",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "unreleasedReward",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "drip",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_frequency",
+          "type": "uint256"
+        }
+      ],
+      "name": "setDripFrequency",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_incentiveAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "setIncentiveAmount",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_stakingRewards",
+          "type": "address"
+        }
+      ],
+      "name": "setStakingContract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "tokenAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "governorRecover",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "stakingContract",
+      "outputs": [
+        {
+          "internalType": "contract IStakingRewards",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lastDistributionTime",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "isDripAvailable",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "nextDripAvailable",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "dripFrequency",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "incentiveAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"ArthaWithdraw\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"Drip\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_frequency\",\"type\":\"uint256\"}],\"name\":\"FrequencyUpdate\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_incentiveAmount\",\"type\":\"uint256\"}],\"name\":\"IncentiveUpdate\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_stakingContract\",\"type\":\"address\"}],\"name\":\"StakingContractUpdate\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"distributedRewards\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"drip\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"dripFrequency\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"governorRecover\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"governorWithdrawArtha\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"incentiveAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"isDripAvailable\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastDistributionTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"nextDripAvailable\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"releasedReward\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_frequency\",\"type\":\"uint256\"}],\"name\":\"setDripFrequency\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_incentiveAmount\",\"type\":\"uint256\"}],\"name\":\"setIncentiveAmount\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_stakingRewards\",\"type\":\"address\"}],\"name\":\"setStakingContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"stakingContract\",\"outputs\":[{\"internalType\":\"contract IStakingRewards\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalReward\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"unreleasedReward\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Artha Protocol\",\"methods\":{},\"title\":\"Staking Rewards Distributor interface\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/parashar/Documents/defi/arthafinance/contracts/rewards/IStakingRewardsDistributor.sol\":\"IStakingRewardsDistributor\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/parashar/Documents/defi/arthafinance/contracts/rewards/IRewardsDistributor.sol\":{\"keccak256\":\"0x92ea435581937897143b21483d6613f773de4529182b0fcedbc319e04330077e\",\"urls\":[\"bzz-raw://ecc118877eab65931c0209453f3545faa92c056789700c147a536fec0973a3a4\",\"dweb:/ipfs/QmUSmDtVe1ziNJopnrk9D7cYVvy3YRwZ4QwUtxE4P16T2p\"]},\"/Users/parashar/Documents/defi/arthafinance/contracts/rewards/IStakingRewards.sol\":{\"keccak256\":\"0x096bac3b7fda79956b6b707f2593bfcb187a1154478334a4489d803d982b29bd\",\"urls\":[\"bzz-raw://6bbe9970e85085f0f918663c4b2c248e81a39fd3eb3da1d018df4ac44d5bcdda\",\"dweb:/ipfs/QmQUmT26LnEsoaaTAnKL26HhMPtVGxkYGBf996tgZe7up4\"]},\"/Users/parashar/Documents/defi/arthafinance/contracts/rewards/IStakingRewardsDistributor.sol\":{\"keccak256\":\"0xc561348a098772d5b5c6e7737d892822bf4ff1f0e24a549307a37a4fae331dde\",\"urls\":[\"bzz-raw://d4ae22b0d1c791575e2f60ac0a13fa9df1845da80390798237c0a629365bf1ec\",\"dweb:/ipfs/QmNPHzAHCBPntFx48r1JS1JHjXx6raDucUqRuQcc4gLvq2\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x5f02220344881ce43204ae4a6281145a67bc52c2bb1290a791857df3d19d78f5\",\"urls\":[\"bzz-raw://24427744bd3e6cb73c17010119af12a318289c0253a4d9acb8576c9fb3797b08\",\"dweb:/ipfs/QmTLDqpKRBuxGxRAmjgXt9AkXyACW3MtKzi7PYjm5iMfGC\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.6.0;\n\nimport \"./IRewardsDistributor.sol\";\n\n/// @title Staking Rewards Distributor interface\n/// @author Artha Protocol\n\ninterface IStakingRewardsDistributor is IRewardsDistributor {\n\n    event Drip(\n        address indexed _caller,\n        uint256 _amount\n    );\n\n    event FrequencyUpdate(\n        uint256 _frequency\n    );\n\n    event IncentiveUpdate(\n        uint256 _incentiveAmount\n    );\n\n    event StakingContractUpdate(\n        address _stakingContract\n    );\n\n    // ----------- State changing API -----------\n\n    function drip() external returns (uint256);\n\n\n    // ----------- Governor-only changing API -----------\n\n    function setDripFrequency(uint256 _frequency) external;\n\n    function setIncentiveAmount(uint256 _incentiveAmount) external;\n\n    function setStakingContract(address _stakingRewards) external;\n\n    function governorRecover(address tokenAddress, address to, uint256 amount) external;\n\n    // ----------- Getters -----------\n\n    function stakingContract() external view returns (IStakingRewards);\n\n    function lastDistributionTime() external view returns (uint256);\n\n    function isDripAvailable() external view returns (bool);\n\n    function nextDripAvailable() external view returns (uint256);\n\n    function dripFrequency() external view returns (uint256);\n\n    function incentiveAmount() external view returns (uint256);\n\n}",
+  "sourcePath": "/Users/parashar/Documents/defi/arthafinance/contracts/rewards/IStakingRewardsDistributor.sol",
+  "ast": {
+    "absolutePath": "/Users/parashar/Documents/defi/arthafinance/contracts/rewards/IStakingRewardsDistributor.sol",
+    "exportedSymbols": {
+      "IStakingRewardsDistributor": [
+        7017
+      ]
+    },
+    "id": 7018,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6935,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:25"
+      },
+      {
+        "absolutePath": "/Users/parashar/Documents/defi/arthafinance/contracts/rewards/IRewardsDistributor.sol",
+        "file": "./IRewardsDistributor.sol",
+        "id": 6936,
+        "nodeType": "ImportDirective",
+        "scope": 7018,
+        "sourceUnit": 6817,
+        "src": "25:35:25",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 6938,
+              "name": "IRewardsDistributor",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 6816,
+              "src": "179:19:25",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IRewardsDistributor_$6816",
+                "typeString": "contract IRewardsDistributor"
+              }
+            },
+            "id": 6939,
+            "nodeType": "InheritanceSpecifier",
+            "src": "179:19:25"
+          }
+        ],
+        "contractDependencies": [
+          6816
+        ],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 6937,
+          "nodeType": "StructuredDocumentation",
+          "src": "62:75:25",
+          "text": "@title Staking Rewards Distributor interface\n @author Artha Protocol"
+        },
+        "fullyImplemented": false,
+        "id": 7017,
+        "linearizedBaseContracts": [
+          7017,
+          6816
+        ],
+        "name": "IStakingRewardsDistributor",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 6945,
+            "name": "Drip",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6944,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6941,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "_caller",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6945,
+                  "src": "226:23:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6940,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "226:7:25",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6943,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6945,
+                  "src": "259:15:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6942,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "259:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "216:64:25"
+            },
+            "src": "206:75:25"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 6949,
+            "name": "FrequencyUpdate",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6948,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6947,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_frequency",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6949,
+                  "src": "318:18:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6946,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "318:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "308:34:25"
+            },
+            "src": "287:56:25"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 6953,
+            "name": "IncentiveUpdate",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6952,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6951,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_incentiveAmount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6953,
+                  "src": "380:24:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6950,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "380:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "370:40:25"
+            },
+            "src": "349:62:25"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 6957,
+            "name": "StakingContractUpdate",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6956,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6955,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_stakingContract",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6957,
+                  "src": "454:24:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6954,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "454:7:25",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "444:40:25"
+            },
+            "src": "417:68:25"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "9f678cca",
+            "id": 6962,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "drip",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6958,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "555:2:25"
+            },
+            "returnParameters": {
+              "id": 6961,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6960,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6962,
+                  "src": "576:7:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6959,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "576:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "575:9:25"
+            },
+            "scope": 7017,
+            "src": "542:43:25",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "f8799a63",
+            "id": 6967,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setDripFrequency",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6965,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6964,
+                  "mutability": "mutable",
+                  "name": "_frequency",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6967,
+                  "src": "677:18:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6963,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "677:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "676:20:25"
+            },
+            "returnParameters": {
+              "id": 6966,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "705:0:25"
+            },
+            "scope": 7017,
+            "src": "651:55:25",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "d29caa0b",
+            "id": 6972,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setIncentiveAmount",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6970,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6969,
+                  "mutability": "mutable",
+                  "name": "_incentiveAmount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6972,
+                  "src": "740:24:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6968,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "740:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "739:26:25"
+            },
+            "returnParameters": {
+              "id": 6971,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "774:0:25"
+            },
+            "scope": 7017,
+            "src": "712:63:25",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "9dd373b9",
+            "id": 6977,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setStakingContract",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6975,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6974,
+                  "mutability": "mutable",
+                  "name": "_stakingRewards",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6977,
+                  "src": "809:23:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6973,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "809:7:25",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "808:25:25"
+            },
+            "returnParameters": {
+              "id": 6976,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "842:0:25"
+            },
+            "scope": 7017,
+            "src": "781:62:25",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "2691c8e1",
+            "id": 6986,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "governorRecover",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6984,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6979,
+                  "mutability": "mutable",
+                  "name": "tokenAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6986,
+                  "src": "874:20:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6978,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "874:7:25",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6981,
+                  "mutability": "mutable",
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6986,
+                  "src": "896:10:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6980,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "896:7:25",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6983,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6986,
+                  "src": "908:14:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6982,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "908:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "873:50:25"
+            },
+            "returnParameters": {
+              "id": 6985,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "932:0:25"
+            },
+            "scope": 7017,
+            "src": "849:84:25",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "ee99205c",
+            "id": 6991,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "stakingContract",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6987,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1003:2:25"
+            },
+            "returnParameters": {
+              "id": 6990,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6989,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6991,
+                  "src": "1029:15:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IStakingRewards_$6933",
+                    "typeString": "contract IStakingRewards"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 6988,
+                    "name": "IStakingRewards",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 6933,
+                    "src": "1029:15:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IStakingRewards_$6933",
+                      "typeString": "contract IStakingRewards"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1028:17:25"
+            },
+            "scope": 7017,
+            "src": "979:67:25",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "75b17350",
+            "id": 6996,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "lastDistributionTime",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6992,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1081:2:25"
+            },
+            "returnParameters": {
+              "id": 6995,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6994,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6996,
+                  "src": "1107:7:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6993,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1107:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1106:9:25"
+            },
+            "scope": 7017,
+            "src": "1052:64:25",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "b5312da2",
+            "id": 7001,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isDripAvailable",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6997,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1146:2:25"
+            },
+            "returnParameters": {
+              "id": 7000,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6999,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 7001,
+                  "src": "1172:4:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6998,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1172:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1171:6:25"
+            },
+            "scope": 7017,
+            "src": "1122:56:25",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "be72d19d",
+            "id": 7006,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "nextDripAvailable",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 7002,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1210:2:25"
+            },
+            "returnParameters": {
+              "id": 7005,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7004,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 7006,
+                  "src": "1236:7:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7003,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1236:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1235:9:25"
+            },
+            "scope": 7017,
+            "src": "1184:61:25",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "6bf64da2",
+            "id": 7011,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "dripFrequency",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 7007,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1273:2:25"
+            },
+            "returnParameters": {
+              "id": 7010,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7009,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 7011,
+                  "src": "1299:7:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7008,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1299:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1298:9:25"
+            },
+            "scope": 7017,
+            "src": "1251:57:25",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "cae5d73b",
+            "id": 7016,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "incentiveAmount",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 7012,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1338:2:25"
+            },
+            "returnParameters": {
+              "id": 7015,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7014,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 7016,
+                  "src": "1364:7:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7013,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1364:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1363:9:25"
+            },
+            "scope": 7017,
+            "src": "1314:59:25",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 7018,
+        "src": "139:1237:25"
+      }
+    ],
+    "src": "0:1376:25"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/Users/parashar/Documents/defi/arthafinance/contracts/rewards/IStakingRewardsDistributor.sol",
+      "exportedSymbols": {
+        "IStakingRewardsDistributor": [
+          7017
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.6",
+            ".0"
+          ]
+        },
+        "id": 6935,
+        "name": "PragmaDirective",
+        "src": "0:23:25"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 6817,
+          "absolutePath": "/Users/parashar/Documents/defi/arthafinance/contracts/rewards/IRewardsDistributor.sol",
+          "file": "./IRewardsDistributor.sol",
+          "scope": 7018,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 6936,
+        "name": "ImportDirective",
+        "src": "25:35:25"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "contractDependencies": [
+            6816
+          ],
+          "contractKind": "interface",
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            7017,
+            6816
+          ],
+          "name": "IStakingRewardsDistributor",
+          "scope": 7018
+        },
+        "children": [
+          {
+            "attributes": {
+              "text": "@title Staking Rewards Distributor interface\n @author Artha Protocol"
+            },
+            "id": 6937,
+            "name": "StructuredDocumentation",
+            "src": "62:75:25"
+          },
+          {
+            "attributes": {
+              "arguments": null
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "IRewardsDistributor",
+                  "referencedDeclaration": 6816,
+                  "type": "contract IRewardsDistributor"
+                },
+                "id": 6938,
+                "name": "UserDefinedTypeName",
+                "src": "179:19:25"
+              }
+            ],
+            "id": 6939,
+            "name": "InheritanceSpecifier",
+            "src": "179:19:25"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "Drip"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": true,
+                      "mutability": "mutable",
+                      "name": "_caller",
+                      "overrides": null,
+                      "scope": 6945,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 6940,
+                        "name": "ElementaryTypeName",
+                        "src": "226:7:25"
+                      }
+                    ],
+                    "id": 6941,
+                    "name": "VariableDeclaration",
+                    "src": "226:23:25"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "_amount",
+                      "overrides": null,
+                      "scope": 6945,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 6942,
+                        "name": "ElementaryTypeName",
+                        "src": "259:7:25"
+                      }
+                    ],
+                    "id": 6943,
+                    "name": "VariableDeclaration",
+                    "src": "259:15:25"
+                  }
+                ],
+                "id": 6944,
+                "name": "ParameterList",
+                "src": "216:64:25"
+              }
+            ],
+            "id": 6945,
+            "name": "EventDefinition",
+            "src": "206:75:25"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "FrequencyUpdate"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "_frequency",
+                      "overrides": null,
+                      "scope": 6949,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 6946,
+                        "name": "ElementaryTypeName",
+                        "src": "318:7:25"
+                      }
+                    ],
+                    "id": 6947,
+                    "name": "VariableDeclaration",
+                    "src": "318:18:25"
+                  }
+                ],
+                "id": 6948,
+                "name": "ParameterList",
+                "src": "308:34:25"
+              }
+            ],
+            "id": 6949,
+            "name": "EventDefinition",
+            "src": "287:56:25"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "IncentiveUpdate"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "_incentiveAmount",
+                      "overrides": null,
+                      "scope": 6953,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 6950,
+                        "name": "ElementaryTypeName",
+                        "src": "380:7:25"
+                      }
+                    ],
+                    "id": 6951,
+                    "name": "VariableDeclaration",
+                    "src": "380:24:25"
+                  }
+                ],
+                "id": 6952,
+                "name": "ParameterList",
+                "src": "370:40:25"
+              }
+            ],
+            "id": 6953,
+            "name": "EventDefinition",
+            "src": "349:62:25"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "StakingContractUpdate"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "_stakingContract",
+                      "overrides": null,
+                      "scope": 6957,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 6954,
+                        "name": "ElementaryTypeName",
+                        "src": "454:7:25"
+                      }
+                    ],
+                    "id": 6955,
+                    "name": "VariableDeclaration",
+                    "src": "454:24:25"
+                  }
+                ],
+                "id": 6956,
+                "name": "ParameterList",
+                "src": "444:40:25"
+              }
+            ],
+            "id": 6957,
+            "name": "EventDefinition",
+            "src": "417:68:25"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "9f678cca",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "drip",
+              "overrides": null,
+              "scope": 7017,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 6958,
+                "name": "ParameterList",
+                "src": "555:2:25"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 6962,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 6959,
+                        "name": "ElementaryTypeName",
+                        "src": "576:7:25"
+                      }
+                    ],
+                    "id": 6960,
+                    "name": "VariableDeclaration",
+                    "src": "576:7:25"
+                  }
+                ],
+                "id": 6961,
+                "name": "ParameterList",
+                "src": "575:9:25"
+              }
+            ],
+            "id": 6962,
+            "name": "FunctionDefinition",
+            "src": "542:43:25"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "f8799a63",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setDripFrequency",
+              "overrides": null,
+              "scope": 7017,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_frequency",
+                      "overrides": null,
+                      "scope": 6967,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 6963,
+                        "name": "ElementaryTypeName",
+                        "src": "677:7:25"
+                      }
+                    ],
+                    "id": 6964,
+                    "name": "VariableDeclaration",
+                    "src": "677:18:25"
+                  }
+                ],
+                "id": 6965,
+                "name": "ParameterList",
+                "src": "676:20:25"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 6966,
+                "name": "ParameterList",
+                "src": "705:0:25"
+              }
+            ],
+            "id": 6967,
+            "name": "FunctionDefinition",
+            "src": "651:55:25"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "d29caa0b",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setIncentiveAmount",
+              "overrides": null,
+              "scope": 7017,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_incentiveAmount",
+                      "overrides": null,
+                      "scope": 6972,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 6968,
+                        "name": "ElementaryTypeName",
+                        "src": "740:7:25"
+                      }
+                    ],
+                    "id": 6969,
+                    "name": "VariableDeclaration",
+                    "src": "740:24:25"
+                  }
+                ],
+                "id": 6970,
+                "name": "ParameterList",
+                "src": "739:26:25"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 6971,
+                "name": "ParameterList",
+                "src": "774:0:25"
+              }
+            ],
+            "id": 6972,
+            "name": "FunctionDefinition",
+            "src": "712:63:25"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "9dd373b9",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setStakingContract",
+              "overrides": null,
+              "scope": 7017,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_stakingRewards",
+                      "overrides": null,
+                      "scope": 6977,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 6973,
+                        "name": "ElementaryTypeName",
+                        "src": "809:7:25"
+                      }
+                    ],
+                    "id": 6974,
+                    "name": "VariableDeclaration",
+                    "src": "809:23:25"
+                  }
+                ],
+                "id": 6975,
+                "name": "ParameterList",
+                "src": "808:25:25"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 6976,
+                "name": "ParameterList",
+                "src": "842:0:25"
+              }
+            ],
+            "id": 6977,
+            "name": "FunctionDefinition",
+            "src": "781:62:25"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "2691c8e1",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "governorRecover",
+              "overrides": null,
+              "scope": 7017,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "tokenAddress",
+                      "overrides": null,
+                      "scope": 6986,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 6978,
+                        "name": "ElementaryTypeName",
+                        "src": "874:7:25"
+                      }
+                    ],
+                    "id": 6979,
+                    "name": "VariableDeclaration",
+                    "src": "874:20:25"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "to",
+                      "overrides": null,
+                      "scope": 6986,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 6980,
+                        "name": "ElementaryTypeName",
+                        "src": "896:7:25"
+                      }
+                    ],
+                    "id": 6981,
+                    "name": "VariableDeclaration",
+                    "src": "896:10:25"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "amount",
+                      "overrides": null,
+                      "scope": 6986,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 6982,
+                        "name": "ElementaryTypeName",
+                        "src": "908:7:25"
+                      }
+                    ],
+                    "id": 6983,
+                    "name": "VariableDeclaration",
+                    "src": "908:14:25"
+                  }
+                ],
+                "id": 6984,
+                "name": "ParameterList",
+                "src": "873:50:25"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 6985,
+                "name": "ParameterList",
+                "src": "932:0:25"
+              }
+            ],
+            "id": 6986,
+            "name": "FunctionDefinition",
+            "src": "849:84:25"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "ee99205c",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "stakingContract",
+              "overrides": null,
+              "scope": 7017,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 6987,
+                "name": "ParameterList",
+                "src": "1003:2:25"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 6991,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "contract IStakingRewards",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "IStakingRewards",
+                          "referencedDeclaration": 6933,
+                          "type": "contract IStakingRewards"
+                        },
+                        "id": 6988,
+                        "name": "UserDefinedTypeName",
+                        "src": "1029:15:25"
+                      }
+                    ],
+                    "id": 6989,
+                    "name": "VariableDeclaration",
+                    "src": "1029:15:25"
+                  }
+                ],
+                "id": 6990,
+                "name": "ParameterList",
+                "src": "1028:17:25"
+              }
+            ],
+            "id": 6991,
+            "name": "FunctionDefinition",
+            "src": "979:67:25"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "75b17350",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "lastDistributionTime",
+              "overrides": null,
+              "scope": 7017,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 6992,
+                "name": "ParameterList",
+                "src": "1081:2:25"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 6996,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 6993,
+                        "name": "ElementaryTypeName",
+                        "src": "1107:7:25"
+                      }
+                    ],
+                    "id": 6994,
+                    "name": "VariableDeclaration",
+                    "src": "1107:7:25"
+                  }
+                ],
+                "id": 6995,
+                "name": "ParameterList",
+                "src": "1106:9:25"
+              }
+            ],
+            "id": 6996,
+            "name": "FunctionDefinition",
+            "src": "1052:64:25"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "b5312da2",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "isDripAvailable",
+              "overrides": null,
+              "scope": 7017,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 6997,
+                "name": "ParameterList",
+                "src": "1146:2:25"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 7001,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 6998,
+                        "name": "ElementaryTypeName",
+                        "src": "1172:4:25"
+                      }
+                    ],
+                    "id": 6999,
+                    "name": "VariableDeclaration",
+                    "src": "1172:4:25"
+                  }
+                ],
+                "id": 7000,
+                "name": "ParameterList",
+                "src": "1171:6:25"
+              }
+            ],
+            "id": 7001,
+            "name": "FunctionDefinition",
+            "src": "1122:56:25"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "be72d19d",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "nextDripAvailable",
+              "overrides": null,
+              "scope": 7017,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7002,
+                "name": "ParameterList",
+                "src": "1210:2:25"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 7006,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7003,
+                        "name": "ElementaryTypeName",
+                        "src": "1236:7:25"
+                      }
+                    ],
+                    "id": 7004,
+                    "name": "VariableDeclaration",
+                    "src": "1236:7:25"
+                  }
+                ],
+                "id": 7005,
+                "name": "ParameterList",
+                "src": "1235:9:25"
+              }
+            ],
+            "id": 7006,
+            "name": "FunctionDefinition",
+            "src": "1184:61:25"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "6bf64da2",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "dripFrequency",
+              "overrides": null,
+              "scope": 7017,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7007,
+                "name": "ParameterList",
+                "src": "1273:2:25"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 7011,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7008,
+                        "name": "ElementaryTypeName",
+                        "src": "1299:7:25"
+                      }
+                    ],
+                    "id": 7009,
+                    "name": "VariableDeclaration",
+                    "src": "1299:7:25"
+                  }
+                ],
+                "id": 7010,
+                "name": "ParameterList",
+                "src": "1298:9:25"
+              }
+            ],
+            "id": 7011,
+            "name": "FunctionDefinition",
+            "src": "1251:57:25"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "cae5d73b",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "incentiveAmount",
+              "overrides": null,
+              "scope": 7017,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7012,
+                "name": "ParameterList",
+                "src": "1338:2:25"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 7016,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7013,
+                        "name": "ElementaryTypeName",
+                        "src": "1364:7:25"
+                      }
+                    ],
+                    "id": 7014,
+                    "name": "VariableDeclaration",
+                    "src": "1364:7:25"
+                  }
+                ],
+                "id": 7015,
+                "name": "ParameterList",
+                "src": "1363:9:25"
+              }
+            ],
+            "id": 7016,
+            "name": "FunctionDefinition",
+            "src": "1314:59:25"
+          }
+        ],
+        "id": 7017,
+        "name": "ContractDefinition",
+        "src": "139:1237:25"
+      }
+    ],
+    "id": 7018,
+    "name": "SourceUnit",
+    "src": "0:1376:25"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.6+commit.6c089d02.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-06-03T16:05:15.751Z",
+  "devdoc": {
+    "author": "Artha Protocol",
+    "methods": {},
+    "title": "Staking Rewards Distributor interface"
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
